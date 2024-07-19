@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #86b03c;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    height: 100vh;
+    background-image: url("https://bisnismuda.id/assets/content/20200824123316000000BlueGreenLoadingIconWebDesignerBusinesscard88.jpg");
+}
+
+.right {
+    width: 50%;
+    height: 90vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content-body {
+    width: 55%;
+}
+
+.content-body .message {
+    color: var(--primary-color);
+}
+
+.content-body .title {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+@media (max-width: 1200px) {
+    .left {
+        width: 40%;
+    }
+
+    .right {
+        width: 60%;
+    }
+
+    .content-body {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-button {
+        margin-bottom: 30px;
+    }
+
+    .content-body {
+        width: 100%;
+    }
+}

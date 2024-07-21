@@ -1,15 +1,28 @@
 {
-    "builds": [
-      {
-        "src": "server.php",
-        "use": "@vercel/php"
-      }
-    ],
-    "routes": [
-      {
+    "version": 2,
+      "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.7.1" }
+    },
+    "routes": [{
         "src": "/(.*)",
-        "dest": "server.php"
-      }
-    ]
-  }
-  
+        "dest": "/api/index.php"
+    }],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://tanipedia-rejlwzeec-dewianaaryanis-projects.vercel.app",
+        "APP_KEY": "base64:Sy91VRljFkTSAqQUOgXdU6uEfFQ4QR0YWu03Hivf03g=",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
+    }
+}

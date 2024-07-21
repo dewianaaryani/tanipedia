@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "server.php",
+        "use": "@vercel/php"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "server.php"
+      }
+    ]
+  }
+  

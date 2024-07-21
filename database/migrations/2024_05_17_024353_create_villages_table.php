@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('villages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('subdistrict_id');
-            $table->string('name');
-            $table->string('post_code');
+            $table->string('name', 50);
+            $table->string('post_code', 50);
             $table->timestamps();
             $table->foreign('subdistrict_id')->references('id')->on('subdistricts')->onDelete('cascade');
         });

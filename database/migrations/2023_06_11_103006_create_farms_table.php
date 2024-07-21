@@ -16,16 +16,16 @@ return new class extends Migration
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
+            $table->string('name', 50);
             $table->decimal('lt', 10, 7);  // Latitude
             $table->decimal('ld', 10, 7); 
-            $table->string('location')->nullable();
+            $table->string('location', 50)->nullable();
             $table->integer('luas');
-            $table->string('kualitas_air');
-            $table->string('kualitas_udara');
-            $table->string('kualitas_tanah');
-            $table->string('contact');
-            $table->string('image')->nullable();
+            $table->string('kualitas_air', 50);
+            $table->string('kualitas_udara', 50);
+            $table->string('kualitas_tanah', 50);
+            $table->string('contact', 50);
+            $table->string('image', 50)->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

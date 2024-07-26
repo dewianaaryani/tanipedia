@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title','Subdistrict')
+@section('title','Kecamatan')
 @section('main-content')
 <div class="row">
               <div class="col-12">

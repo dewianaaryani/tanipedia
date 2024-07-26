@@ -53,7 +53,7 @@
             </div>          
             <div class="row">
                 <div class="form-group col-4">
-                    <label for="lt">Longitude</label>
+                    <label for="lt">Latitude</label>
                     <input id="lt" type="number" class="form-control" name="lt">
                 </div>   
                 @error('lt')
@@ -62,7 +62,7 @@
                     </div>
                 @enderror
                 <div class="form-group col-4">
-                    <label for="password">Latitude</label>
+                    <label for="password">Longitude</label>
                     <input id="ld" type="number" class="form-control" name="ld">
                 </div>   
                 @error('ld')

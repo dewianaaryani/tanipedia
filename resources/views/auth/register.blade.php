@@ -25,7 +25,7 @@
 			@endif
 		</div>		
 		<button type="submit" class="btn btn--primary w-100 mt-3">
-				Register
+				Register Now
 		</button>
 	</form>
 @endsection

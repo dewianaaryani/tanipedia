@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-3">
         <img src="{{ asset('images/logo.png') }}" />
-        <p>Lorem ipsum dolor sit amet lorem loerm</p>
+        <p>website penyedia informasi untuk para petani</p>
       </div>
       <div class="col-md-2 mt-3 mt-md-0">
         <h6>Page Menus</h6>

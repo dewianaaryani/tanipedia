@@ -17,9 +17,7 @@
         <small class="text-danger">{{ $errors->first('password') }}</small>
       @endif
     </div>
-    <div class="text-end my-4">
-      <a href="" class="text--primary">Forgot password?</a>
-    </div>
+    
     <button type="submit" class="btn btn--primary w-100 py-2" >Login Now</button>
   </form>
 @endsection

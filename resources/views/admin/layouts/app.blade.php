@@ -115,6 +115,7 @@
                 <a href="{{ route('admin.messages.index') }}" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Messages</span></a>
                 <ul class="dropdown-menu">                  
                     <li class="@if(request()->routeIs('admin.messages.index')) active @endif"><a class="nav-link" href="{{ route('admin.messages.index') }}">Messages</a></li>
+                    <li class="@if(request()->routeIs('admin.messages.create')) active @endif"><a class="nav-link" href="{{ route('admin.messages.create') }}">Add Message</a></li>
                 </ul>
             </li>
 

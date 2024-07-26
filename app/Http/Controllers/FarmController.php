@@ -15,11 +15,7 @@ class FarmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function register(){        
-        $locations = Village::get();
-        return view('pages.my-farm.register.index', compact('locations'));
-    }    
-     public function index()
+    public function index()
     {
         $farm = Farm::where('user_id', Auth::user()->id)->first();                
         if(!($farm == null))
@@ -31,8 +27,11 @@ class FarmController extends Controller
             $products = null;
             return view('pages.my-farm.index',compact('farm', 'products'));
         }
-
     }
+     public function register(){        
+        $locations = Village::get();
+        return view('pages.my-farm.register.index', compact('locations'));
+    }    
     public function store(Request $request)
     {
         $request->validate([            
@@ -84,6 +83,22 @@ class FarmController extends Controller
         // Redirect back to the farm page or wherever appropriate
         return redirect()->back();
     }
+    public function destroyProduct($farmId, $productId)
+    {
+        // Find the farm
+        $farm = Farm::findOrFail($farmId);
+
+        // Find the product belonging to this farm
+        $product = Product::where('farm_id', $farmId)
+                          ->where('id', $productId)
+                          ->firstOrFail();
+
+        // Delete the product
+        $product->delete();
+
+        return redirect()->route('my-farm')
+                         ->with('success', 'Product deleted from farm successfully');
+    }
     /**
      * Display the specified resource.
      *
@@ -128,21 +143,6 @@ class FarmController extends Controller
     {
         //
     }
-    public function destroyProduct($farmId, $productId)
-    {
-        // Find the farm
-        $farm = Farm::findOrFail($farmId);
-
-        // Find the product belonging to this farm
-        $product = Product::where('farm_id', $farmId)
-                          ->where('id', $productId)
-                          ->firstOrFail();
-
-        // Delete the product
-        $product->delete();
-
-        return redirect()->route('my-farm')
-                         ->with('success', 'Product deleted from farm successfully');
-    }
+    
     
 }

@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('villages');
         Schema::create('villages', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('subdistrict_id');
+            $table->increments('id');
+            $table->unsignedInteger('subdistrict_id');
             $table->string('name', 50);
             $table->string('post_code', 50);
             $table->timestamps();

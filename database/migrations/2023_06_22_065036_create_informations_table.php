@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('informations');
         Schema::create('informations', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('title', 50);
             $table->string('image', 50);
             $table->text('content');

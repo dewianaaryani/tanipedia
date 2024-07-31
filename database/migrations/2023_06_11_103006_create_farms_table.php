@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('farms');
         Schema::create('farms', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->string('name', 50);
             $table->decimal('lt', 10, 7);  // Latitude
             $table->decimal('ld', 10, 7); 

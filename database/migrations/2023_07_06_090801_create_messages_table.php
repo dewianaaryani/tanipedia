@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('messages');
         Schema::create('messages', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('email', 50);
             $table->string('message');
             $table->timestamps();
